@@ -4,7 +4,7 @@ router = APIRouter()
 
 @router.post(
     "/analyze",
-    operation_id="analyzePremium",
+    operation_id="analyze_premium",
     summary="Analyze Premium Forecast",
     description="Upload file and analyze forecast vs actual using premium agent logic."
 )
