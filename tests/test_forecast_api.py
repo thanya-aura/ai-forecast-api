@@ -8,5 +8,9 @@ from fastapi.testclient import TestClient
 client = TestClient(app)
 
 def test_forecast_analyze_missing_file():
-    response = client.post("/api/forecast/analyze")
-    assert response.status_code == 422  # Missing file should trigger 422 validation error
+    """
+    Test that calling /forecast/analyze without a file returns 422 Unprocessable Entity.
+    """
+    response = client.post("/forecast/analyze")  # ✅ Corrected path (no /api prefix)
+    assert response.status_code == 422
+
